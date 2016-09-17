@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+     <title>Qui est qui ?</title>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+  </head>
+  <body>
+     <h1>Qui est qui ? Scientifique ou actrice ?</h1>
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js"></script>
+    
+
+    <div class="container">
+      <div id="score">
+      </div>
+    
+      <div id="persons">
+      </div>
+      <!-- -->
+      <div class="row">
+	<div class="col-sm-12">
+    <button id="submit-button" type="button"  class="btn btn-success disabled" onclick="show_results()">Voir mon score</button>
+	</div>
+      </div>
+    </div>
+
+    <script>
+function answer_clicked( index, value) {
+
+    answers[index] = value;
+    for(i = 0;i < persons.length;++i ) {
+	if( answers[i] == "none" ) {
+	    return;
+	}
+    }
+    $("#submit-button").attr("class", "btn btn-success");
+}
+
+function show_results() {
+    result_banner=`
+    	<div class="alert alert-info" role="alert">RESULT</div> 
+	`;
+    success_banner =`
+	<div class="alert alert-success" role="alert">
+	<strong>Bravo ! </strong>COMMENT.
+	</div>
+    `;
+    error_banner = `
+	<div class="alert alert-danger" role="alert">
+	<strong>Faux ! </strong>COMMENT.
+	</div>
+    `;
+    score = 0;
+    for(i = 0;i < persons.length;++i ) {
+	$( "#choice-"+i).empty();
+	if( answers[i].toLowerCase()  == persons[i].type.toLowerCase() ) {
+	    score++;
+	    to_insert = success_banner;
+	}
+	else {
+	    to_insert = error_banner;
+	}	
+	$( "#choice-"+i).append(to_insert.replace("COMMENT",persons[i].comment ) );
+    }
+    to_insert = "";
+    percentage = score / persons.length * 100;
+    for(i = 0; i < score_comments.length;++i) {
+	if( percentage >= score_comments[i][0] ) {
+	    to_insert = score_comments[i][1];
+	    break;
+	}
+    }
+    if(to_insert == "") {
+	to_insert = score_comments[score_comments.length - 1][1];
+    }
+    to_insert = to_insert.replace( "SCORE", score + " (" + Number(percentage).toFixed(0) + "% de bonnes réponses)" );
+    $( "#score" ).append(result_banner.replace("RESULT",to_insert));
+    $( "#submit-button").remove();
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+
+}
+
+    persons = [];
+    answers = [];
+    score_comments = [];
+$.getJSON( "persons.json", function( data ) {
+    
+    template = `	<div class="row">
+	<div class="col-sm-12">
+	<img src="images/IMAGE"></img>
+	</div>
+	</div>
+	<!-- -->
+	<div class="row">
+	<div id="choice-INDEX" class="col-sm-12">
+	<div class="btn-group" data-toggle="buttons">
+	<label class="btn btn-primary" onclick="answer_clicked(INDEX,'Scientifique' )"><input type="radio" name="options"  autocomplete="off">Scientifique</label>
+	<label class="btn btn-primary" onclick="answer_clicked(INDEX,'Actrice' )"><input type="radio" name="options"  autocomplete="off">Actrice</label>
+	</div>
+	</div>
+	</div>
+	`;
+    persons = data.persons;
+    score_comments = data.scores;
+
+    for( i = 0;i < persons.length;++i) {
+	answers.push("none");
+	to_insert = template.replace("IMAGE",persons[i].image);
+	to_insert = to_insert.replace( "INDEX", i );
+	to_insert = to_insert.replace( "INDEX", i );
+	to_insert = to_insert.replace( "INDEX", i );
+	$( "#persons" ).append(to_insert);
+    }
+      });
+    </script>
+
+  </body>
+</html>
+
+

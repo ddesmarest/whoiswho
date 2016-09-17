@@ -1,0 +1,19 @@
+{
+	"persons": [{
+		"type": "Actrice",
+		"comment": "Une actrice très en vogue !",
+		"image": "1.jpg"
+	}, {
+		"type": "Scientifique",
+		"comment": "Une scientifique très en vogue !",
+		"image": "2.jpg"
+	}, {
+		"type": "Scientifique",
+		"comment": "Une scientifique très en vogue 2!",
+		"image": "3.jpg"
+	}],
+
+    "scores":[ [80,"Votre score est de SCORE, trop fort"],
+	       [50,"Votre score est de SCORE, c'est moyen... "],
+	       [20,"Votre score est de SCORE, c'est vraiment nul... "] ]
+}
