@@ -36,18 +36,21 @@
     </div>
 
     <script>
-function answer_clicked( index, value) {
-
-    answers[index] = value;
-    for(i = 0;i < persons.length;++i ) {
-	if( answers[i] == "none" ) {
-	    return;
+    function answer_clicked( index, value) {
+	answers[index] = value;
+	for(i = 0;i < persons.length;++i ) {
+	    if( answers[i] == "none" ) {
+		return;
+	    }
 	}
+	$("#submit-button").attr("class", "btn btn-success");
+	answer_all = true;
     }
-    $("#submit-button").attr("class", "btn btn-success");
-}
 
 function show_results() {
+    if( answer_all == false) {
+	return;
+    }
     result_banner=`
     	<div class="alert alert-info" role="alert">RESULT</div> 
 	`;
@@ -91,14 +94,16 @@ function show_results() {
 
 }
 
-    persons = [];
-    answers = [];
-    score_comments = [];
+persons = [];
+answers = [];
+score_comments = [];
+answer_all = false;
+		  
 $.getJSON( "persons.json", function( data ) {
     
     template = `	<div class="row">
 	<div class="col-sm-12">
-	<img src="images/IMAGE"></img>
+	<img id="image-INDEX" src="images/IMAGE"></img>
 	</div>
 	</div>
 	<!-- -->
@@ -117,9 +122,7 @@ $.getJSON( "persons.json", function( data ) {
     for( i = 0;i < persons.length;++i) {
 	answers.push("none");
 	to_insert = template.replace("IMAGE",persons[i].image);
-	to_insert = to_insert.replace( "INDEX", i );
-	to_insert = to_insert.replace( "INDEX", i );
-	to_insert = to_insert.replace( "INDEX", i );
+	to_insert = to_insert.split("INDEX").join( i );
 	$( "#persons" ).append(to_insert);
     }
       });
