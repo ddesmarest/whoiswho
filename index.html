@@ -13,7 +13,6 @@
 
   </head>
   <body>
-     <h1>Qui est qui ? Scientifique ou actrice ?</h1>
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
@@ -22,18 +21,24 @@
     
 
     <div class="container">
+      <a href="https://sciencefeminine.wordpress.com/"><img src="images/banner.jpg"></a>
+     <center><h1>Qui est qui ? Scientifique ou actrice ?</h1></center>
+
       <div id="score">
       </div>
     
-      <div id="persons">
-      </div>
-      <!-- -->
-      <div class="row">
-	<div class="col-sm-12">
-    <button id="submit-button" type="button"  class="btn btn-success disabled" onclick="show_results()">Voir mon score</button>
+      <center>
+	<div id="persons">
 	</div>
-      </div>
+	<!-- -->
+	<div class="row">
+	  <div class="col-sm-12">
+	    <button id="submit-button" type="button"  class="btn btn-success disabled" onclick="show_results()">Voir mon score</button>
+	  </div>
+	</div>
     </div>
+          </center>
+
 
     <script>
     function answer_clicked( index, value) {
@@ -55,17 +60,13 @@ function show_results() {
 	return;
     }
     result_banner=`
-    	<div class="alert alert-info" role="alert">RESULT</div> 
+    	<div><br><center><h4>RESULT</h4></center><br></div> 
 	`;
     success_banner =`
-	<div class="alert alert-success" role="alert">
-	<strong>Bravo ! </strong>COMMENT.
-	</div>
+	<div><h5><strong>Bravo ! </strong>COMMENT.</h5></div>
     `;
     error_banner = `
-	<div class="alert alert-danger" role="alert">
-	<strong>Faux ! </strong>COMMENT.
-	</div>
+	<div><h5><strong>Faux ! </strong>COMMENT.</h5></div>
     `;
     score = 0;
     for(i = 0;i < persons.length;++i ) {
