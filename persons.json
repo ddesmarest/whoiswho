@@ -1,19 +1,91 @@
 {
-	"persons": [{
-		"type": "Actrice",
-		"comment": "Une actrice très en vogue !",
-		"image": "1.jpg"
-	}, {
-		"type": "Scientifique",
-		"comment": "Une scientifique très en vogue !",
-		"image": "2.jpg"
-	}, {
-		"type": "Scientifique",
-		"comment": "Une scientifique très en vogue 2!",
-		"image": "3.jpg"
-	}],
-
-    "scores":[ [80,"Votre score est de SCORE, trop fort"],
+    "scores":[ [80,"Votre score est de SCORE, tres bien "],
 	       [50,"Votre score est de SCORE, c'est moyen... "],
-	       [20,"Votre score est de SCORE, c'est vraiment nul... "] ]
+	       [20,"Votre score est de SCORE, c'est vraiment ... "] ],
+
+     "persons": [
+	   {
+		"type": "Scientifique",
+		"comment": "Une scientifique tres en vogue 2!",
+		"image": "persons/340406343_small.jpg"
+	    },
+	   {
+		"type": "Scientifique",
+		"comment": "Genome",
+		"image": "persons/anahi_molla_herman.jpg"
+	    },
+	   {
+		"type": "Actrice",
+		"comment": "Actrice, scénariste, réalisatrice et productrice amécaine",
+		"image": "persons/brit_marling.jpg"
+	    },
+	   {
+		"type": "Actrice", 
+		"comment": "Coraly Zahonero est une actrice et metteuse en scène française ",
+		"image": "persons/coralie_zahonero.jpg"
+	    },
+	   {
+		"type": "Scientifique",
+		"comment": "Hedy Lamarr est une actrice, productrice de cinéma et une scientifique autrichienne et américaine",
+		"image": "persons/hedy_lamarr.jpg"
+	    },
+	   {
+		"type": "Scientifique",
+		"comment": "Physicienne",
+		"image": "persons/lisa_randall.jpg"
+	    },
+	   {
+		"type": "Scientifique",
+		"comment": "Math?ticienne",
+		"image": "persons/maryam_mirzakhani.jpg"
+	    },
+	   {
+		"type": "Actrice",
+		"comment": "Amanda Tapping est une actrice de télévision britannico-canadienne",
+		"image": "persons/amanda_tapping.jpg"
+	    },
+	   {
+		"type": "Actrice",
+		"comment": "Actrice, scénariste, réalisatrice et productrice amécaine",
+		"image": "persons/brit_marling_2.jpg"
+	    },
+	   {
+		"type": "Scientifique",
+		"comment": "Caroline Midonet, CNRS",
+		"image": "persons/caroline_midonet.jpg"
+	    },
+	   {
+		"type": "Scientifique",
+		"comment": "????? ",
+		"image": "persons/flyer_grenoble.jpg"
+	    },
+	   {
+		"type": "Actrice",
+		"comment": "Khandi Alexander",
+		"image": "persons/khandi_alexander.jpg"
+	    },
+	   {
+		"type": "Actrice",
+		"comment": "Louise Lombard",
+		"image": "persons/louise_lombard.jpg"
+	    },
+	   {
+		"type": "Scientifique",
+		"comment": "???",
+		"image": "persons/une_tete_chercheuse_contre_le_cancer.jpg"
+	    }
+]
+
+
 }
+
+
+
+
+
+
+             
+  
+
+
+

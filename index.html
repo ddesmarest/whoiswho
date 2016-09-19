@@ -78,7 +78,7 @@ function show_results() {
 	else {
 	    to_insert = error_banner;
 	}	
-	$( "#choice-"+i).append(to_insert.replace("COMMENT",persons[i].comment ) );
+	$( "#choice-"+i).append(to_insert.replace("COMMENT",persons[i].type + " - " +persons[i].comment ) );
     }
     to_insert = "";
     percentage = score / persons.length * 100;
