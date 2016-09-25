@@ -1,91 +1,62 @@
 {
-    "scores":[ [80,"Votre score est de SCORE, tres bien "],
-	       [50,"Votre score est de SCORE, c'est moyen... "],
-	       [20,"Votre score est de SCORE, c'est vraiment ... "] ],
+    "scores":[ [80,"Votre score est de SCORE."],
+	       [50,"Votre score est de SCORE."],
+	       [20,"Votre score est de SCORE."] ],
 
      "persons": [
-	   {
-		"type": "Scientifique",
-		"comment": "Une scientifique tres en vogue 2!",
-		"image": "persons/340406343_small.jpg"
-	    },
-	   {
-		"type": "Scientifique",
-		"comment": "Genome",
-		"image": "persons/anahi_molla_herman.jpg"
-	    },
-	   {
-		"type": "Actrice",
-		"comment": "Actrice, scénariste, réalisatrice et productrice amécaine",
-		"image": "persons/brit_marling.jpg"
-	    },
-	   {
-		"type": "Actrice", 
-		"comment": "Coraly Zahonero est une actrice et metteuse en scène française ",
-		"image": "persons/coralie_zahonero.jpg"
-	    },
-	   {
-		"type": "Scientifique",
-		"comment": "Hedy Lamarr est une actrice, productrice de cinéma et une scientifique autrichienne et américaine",
-		"image": "persons/hedy_lamarr.jpg"
-	    },
-	   {
-		"type": "Scientifique",
-		"comment": "Physicienne",
-		"image": "persons/lisa_randall.jpg"
-	    },
-	   {
-		"type": "Scientifique",
-		"comment": "Math?ticienne",
-		"image": "persons/maryam_mirzakhani.jpg"
-	    },
-	   {
-		"type": "Actrice",
-		"comment": "Amanda Tapping est une actrice de télévision britannico-canadienne",
-		"image": "persons/amanda_tapping.jpg"
-	    },
-	   {
-		"type": "Actrice",
-		"comment": "Actrice, scénariste, réalisatrice et productrice amécaine",
-		"image": "persons/brit_marling_2.jpg"
-	    },
-	   {
-		"type": "Scientifique",
-		"comment": "Caroline Midonet, CNRS",
-		"image": "persons/caroline_midonet.jpg"
-	    },
-	   {
-		"type": "Scientifique",
-		"comment": "????? ",
-		"image": "persons/flyer_grenoble.jpg"
-	    },
-	   {
-		"type": "Actrice",
-		"comment": "Khandi Alexander",
-		"image": "persons/khandi_alexander.jpg"
-	    },
-	   {
-		"type": "Actrice",
-		"comment": "Louise Lombard",
-		"image": "persons/louise_lombard.jpg"
-	    },
-	   {
-		"type": "Scientifique",
-		"comment": "???",
-		"image": "persons/une_tete_chercheuse_contre_le_cancer.jpg"
-	    }
+	 {
+	     "type": ["Actrice"],
+	     "comment": "<b>Khandi Alexander</b> est une actrice américaine qui joue le Dr Alexx Woods dans les experts Miami. ",
+	     "image": "persons/miniKhandi-alexander.png"
+	 },
+	 {
+	     "type": ["Scientifique"],
+	     "comment": "<b>Laurence Zitvogel</b> est à la fois oncologue et chercheuse. Cette Française est une pionnière de l’immunothérapie, une discipline qui se propose de traiter le cancer en utilisant le système immunitaire des patients. Grâce à elle, les mécanismes d’action des chimiothérapies sont mieux compris ce qui a permis d’améliorer les traitements.",
+	     "image": "persons/miniLaurence-Zitvogel.png"
+	 },
+	 {
+	     "type": ["Scientifique"],
+	     "comment": "<b>Lisa Randall</b> est une brillante physicienne en poste à l’université Harvard, aux Etats-Unis. Son travail, très théorique, suggère que la faiblesse relative des forces gravitationnelles serait liée à l’existence de dimensions supplémentaires.",
+	     "image": "persons/miniLisa-Randall.jpg"
+	 },
+	 {
+	     "type": ["Actrice"],
+	     "comment": "<b>Brit Marling</b> est une actrice qui a notamment joué le rôle d’une chercheuse - à lunettes - dans « I origins ».",
+	     "image": "persons/minibrit-marling.png"
+	 },
+	 {
+	     "type": ["Actrice"],
+	     "comment": "<b>Aurélie Bargeme</b> est une actrice française qui a joué une scientifique dans Nathalie Giesbert dans la série « RIS police scientifique ».",
+	     "image": "persons/miniAurelie-Bargeme.png"
+	 },
+	 {
+	     "type": ["Scientifique"],
+	     "comment": "<b>Marine Bézagu</b> est chercheuse. Elle essaie de créer de minuscules taxis moléculaires capables d’emmener des substances anticancéreuses à proximité, voire à l’intérieur de tumeurs.",
+	     "image": "persons/miniMarine_Bezagu.png"
+	 },
+	 {
+	     "type": ["Actrice"],
+	     "comment": "<b>Amanda Tapping</b> est une actrice britannico-canadienne qui a, à plusieurs reprises, a incarné des scientifiques dont le Dr Carter dans la série Stargate SG-1.",
+	     "image": "persons/miniamanda-tapping.jpg"
+	 },
+	 {
+	     "type": ["Actrice"], 
+	     "comment": "<b>Coraly Zahonero</b> est une actrice française qui a interprété le Dr. Alessandra Joffrin, la médecin-légiste de RIS Police scientifique.",
+	     "image": "persons/minicoraly-zahonero.png"
+	 },
+	 
+	 {
+	     "type": ["Scientifique","Actrice"],
+	     "comment": "C’est un piège. <b>Hedy Lamarr</b> a été à la fois actrice et scientifique. Elle a notamment inventé un système de codage des transmissions qui est encore aujourd’hui utilisé par nos téléphones portables ou GPS. La classe hein !",
+	     "image": "persons/miniHedy_Lamarr.png"
+	 },
+	 {
+	     "type": ["Scientifique"],
+	     "comment": "<b>Maryam Mirzakhani</b> est une mathématicienne iranienne. En 2014, elle a obtenu l’équivalent du prix Nobel de mathématiques, la médaille Fields, pour ses travaux en topologie et géométrie des surface de Reimann.  Depuis l’âge de 31 ans, elle est professeure à Stanford.",
+	     "image": "persons/miniMaryam_Mirzakhani.png"
+	 }
 ]
 
 
 }
-
-
-
-
-
-
-             
-  
-
-
 

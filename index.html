@@ -24,7 +24,7 @@
       <center>
 	<a href="https://sciencefeminine.wordpress.com/"><img src="images/banner.jpg"></a>
 	<h1>Actrice ou Scientifique ?</h1>
-	<h3>Saurez-vous reconnaître qui est qui ?</h3>
+	<h4>Voici dix femmes canons. Certaines sont de grandes chercheuses, d'autres <br/>incarnent des scientifiques au cinéma ou sur le petit écran.<br/>Saurez-vous reconnaître qui est qui ?</h4>
       </center>
       <div id="score">
       </div>
@@ -61,19 +61,19 @@ function show_results() {
 	return;
     }
     result_banner= "<div><br><center><h4>RESULT</h4></center><br></div>";
-    success_banner = "<div><h5><strong>Bravo ! </strong>COMMENT.</h5></div>";
-    error_banner = "<div><h5><strong>Faux ! </strong>COMMENT.</h5></div>";
+    success_banner = "<div><h6><strong>Bravo ! </strong>COMMENT</h6></div>";
+    error_banner = "<div><h6><strong>Faux ! </strong>COMMENT</h6></div>";
     score = 0;
     for(i = 0;i < persons.length;++i ) {
 	$( "#choice-"+i).empty();
-	if( answers[i].toLowerCase()  == persons[i].type.toLowerCase() ) {
+	if($.inArray(answers[i], persons[i].type) ) {
 	    score++;
 	    to_insert = success_banner;
 	}
 	else {
 	    to_insert = error_banner;
 	}	
-	$( "#choice-"+i).append(to_insert.replace("COMMENT",persons[i].type + " - " +persons[i].comment ) );
+	$( "#choice-"+i).append(to_insert.replace("COMMENT",persons[i].comment ) );
     }
     to_insert = "";
     percentage = score / persons.length * 100;
@@ -88,6 +88,8 @@ function show_results() {
     }
     to_insert = to_insert.replace( "SCORE", score + " (" + Number(percentage).toFixed(0) + "% de bonnes réponses)" );
     $( "#score" ).append(result_banner.replace("RESULT",to_insert));
+    $( "#submit-button").parent().append('<h4>Pour découvrir d\'autres portraits de femmes scientifiques, rendez-vous sur <a href="https://sciencefeminine.wordpress.com/">sciencefeminine.wordpress.com</a></h4>');
+		  
     $( "#submit-button").remove();
     $("html, body").animate({ scrollTop: 0 }, "slow");
 
@@ -100,7 +102,7 @@ answer_all = false;
 		  
 $.getJSON( "persons.json", function( data ) {
     
-    template = '<div class="row"><div class="col-sm-12"><img id="image-INDEX" src="images/IMAGE"></img></div></div><div class="row"><div id="choice-INDEX" class="col-sm-12"><div class="btn-group" data-toggle="buttons"><label class="btn btn-primary" onclick="answer_clicked(INDEX,\'Scientifique\' )"><input type="radio" name="options"  autocomplete="off">Scientifique</label><label class="btn btn-primary" onclick="answer_clicked(INDEX,\'Actrice\' )"><input type="radio" name="options"  autocomplete="off">Actrice</label></div></div></div>';
+    template = '<div class="row"><div class="col-sm-12"><img id="image-INDEX" src="images/IMAGE"></img></div></div><div class="row"><div id="choice-INDEX" class="col-sm-12"><div class="btn-group" data-toggle="buttons"><label class="btn btn-primary" onclick="answer_clicked(INDEX,\'Actrice\' )"><input type="radio" name="options"  autocomplete="off">Actrice</label><label class="btn btn-primary" onclick="answer_clicked(INDEX,\'Scientifique\' )"><input type="radio" name="options"  autocomplete="off">Scientifique</label></div></div></div>';
     persons = data.persons;
     score_comments = data.scores;
 
