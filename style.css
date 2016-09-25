@@ -1,5 +1,14 @@
 body {
-    background-color:#94A3DE;
+    background-color:#d4e2fd;
     font: 'Gotham Book', Gotham-Book, Arial, sans-serif;
-    color: #FFFFFF;
+    /* color: #FFFFFF; */
+    color: #000000;
+}
+h1 {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+h3 {
+        padding-top: 0px;
+    padding-bottom: 50px;
 }
