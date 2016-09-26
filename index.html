@@ -55,7 +55,15 @@
 	$("#submit-button").attr("class", "btn btn-success");
 	answer_all = true;
     }
-
+function contains( value, values ) {
+var i;
+for( i = 0;i < values.length;++i) {
+if( value == values[i] ) {
+return true;
+}
+}
+return false;
+}
 function show_results() {
     if( answer_all == false) {
 	return;
@@ -65,8 +73,8 @@ function show_results() {
     error_banner = "<div><h6><strong>Faux ! </strong>COMMENT</h6></div>";
     score = 0;
     for(i = 0;i < persons.length;++i ) {
-	$( "#choice-"+i).empty();
-	if($.inArray(answers[i], persons[i].type) ) {
+		  $( "#choice-"+i).empty();
+	if(contains(answers[i], persons[i].type) ) {
 	    score++;
 	    to_insert = success_banner;
 	}
