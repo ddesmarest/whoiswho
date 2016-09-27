@@ -100,7 +100,7 @@ function show_results() {
     }
     to_insert = to_insert.replace( "SCORE", score + " (" + Number(percentage).toFixed(0) + "% de bonnes réponses)" );
     $( "#score" ).append(result_banner.replace("RESULT",to_insert));
-    $( "#submit-button").parent().append('<h4>Pour découvrir d\'autres portraits de femmes scientifiques, rendez-vous sur <a href="https://sciencefeminine.wordpress.com/">sciencefeminine.wordpress.com</a></h4>');
+    $( "#submit-button").parent().append('<h4>Clique <a href="https://sciencefeminine.wordpress.com/">ici</a> si tu veux continuer à être surpris par des femmes scientifiques.</h4>');
 		  
     $( "#submit-button").remove();
     $("html, body").animate({ scrollTop: 0 }, "slow");
