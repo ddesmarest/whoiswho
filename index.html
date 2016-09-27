@@ -12,6 +12,7 @@
     <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"-->
     
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="buttons.css">
 
   </head>
   <body>
@@ -28,6 +29,7 @@
 	<h1>Quizz : Actrice ou Scientifique ?</h1>
 	<h4>Certaines de ces femmes sont de grandes chercheuses, d'autres <br/>incarnent des scientifiques au cinéma ou sur le petit écran.<br/>Saurez-vous reconnaître qui est qui ?</h4>
       </center>
+
       <div id="score">
       </div>
       <center>
@@ -112,7 +114,34 @@ answer_all = false;
 		  
 $.getJSON( "persons.json", function( data ) {
     
-    template = '<div class="row"><div class="col-sm-12"><img id="image-INDEX" src="images/IMAGE"></img></div></div><div class="row"><div id="choice-INDEX" class="col-sm-12"><div class="btn-group" data-toggle="buttons"><label class="btn btn-primary" onclick="answer_clicked(INDEX,\'Actrice\' )"><input type="radio" name="options"  autocomplete="off">Actrice</label><label class="btn btn-primary" onclick="answer_clicked(INDEX,\'Scientifique\' )"><input type="radio" name="options"  autocomplete="off">Scientifique</label></div></div></div>';
+template = '<div class="row"><div class="col-sm-12"><img id="image-INDEX" src="images/IMAGE"></img></div></div><div class="row"><div id="choice-INDEX" class="col-sm-12"><div class="btn-group" data-toggle="buttons"><label class="btn btn-primary" onclick="answer_clicked(INDEX,\'Actrice\' )"><input type="radio" name="options"  autocomplete="off">Actrice</label><label class="btn btn-primary" onclick="answer_clicked(INDEX,\'Scientifique\' )"><input type="radio" name="options"  autocomplete="off">Scientifique</label></div></div></div>';
+
+template = `
+<div class="row">
+  <div class="col-sm-12">
+     <img id="image-INDEX" src="images/IMAGE"></img>
+  </div>
+</div>
+<div class="row">
+ <div id="choice-INDEX" class="col-sm-12 choices">
+<center>
+  <ul>
+  <li onclick="answer_clicked(INDEX,\'Actrice\' )">
+    <input type="radio" id="f-option-INDEX" name="selector-INDEX">
+    <label for="f-option-INDEX">Actrice</label>  
+    <div class="check"></div>
+  </li>
+  <li onclick="answer_clicked(INDEX,\'Scientifique\' )">
+    <input type="radio" id="s-option-INDEX" name="selector-INDEX">
+    <label for="s-option-INDEX">Scientifique</label>    
+    <div class="check"><div class="inside"></div></div>
+  </li>  
+ </ul>
+</center>
+</div>
+</div>
+`;
+		  
     persons = data.persons;
     score_comments = data.scores;
 
