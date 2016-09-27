@@ -33,7 +33,7 @@ ul li input[type=radio]{
 ul li label{
   display: block;
   position: relative;
-  padding: 10px 25px 25px 80px;
+  padding: 10px 25px 25px 55px;
   z-index: 9;
   cursor: pointer;
   -webkit-transition: all 0.25s linear;
