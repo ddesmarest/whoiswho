@@ -27,7 +27,7 @@
       <center>
 	<a href="https://sciencefeminine.wordpress.com/"><img src="images/banner.jpg"></a>
 	<h1>Quizz : Actrice ou Scientifique ?</h1>
-	<h4>Certaines de ces femmes sont de grandes chercheuses, d'autres <br/>incarnent des scientifiques au cinéma ou sur le petit écran.<br/>Saurez-vous reconnaître qui est qui ?</h4>
+	<h4 id="rules">Certaines de ces femmes sont de grandes chercheuses, d'autres <br/>incarnent des scientifiques au cinéma ou sur le petit écran.<br/>Saurez-vous reconnaître qui est qui ?<br><br>Pour chaque image, choisissez une profession – actrice ou scientifique -, <br>validez et découvrez votre score !</h4>
       </center>
 
       <div id="score">
@@ -103,6 +103,7 @@ function show_results() {
     $( "#submit-button").parent().append('<h4>Clique <a href="https://sciencefeminine.wordpress.com/">ici</a> si tu veux continuer à être surpris par des femmes scientifiques.</h4>');
 		  
     $( "#submit-button").remove();
+    $( "#rules").remove();
     $("html, body").animate({ scrollTop: 0 }, "slow");
 
 }
