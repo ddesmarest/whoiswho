@@ -1,7 +1,10 @@
 {
-    "scores":[ [80,"Votre score est de SCORE."],
-	       [50,"Votre score est de SCORE."],
-	       [20,"Votre score est de SCORE."] ],
+    "scores":[ [10,"Votre score est de SCORE. Goooooooaaaaal ! Moult respects ! "],
+	       [8,"Votre score est de SCORE. C’est grave légal."],
+	       [6,"Votre score est de SCORE. C’est pas pire !"],
+	       [5,"Votre score est de SCORE. Tout juste la moyenne… Mouais, pas quoi pavoiser."],
+	       [3,"Votre score est de SCORE. Hum, c’est pas folichon."],
+	       [2," Votre score est de SCORE. Tabernacle, ce score est poche !"] ],
 
      "persons": [
 	 {
@@ -47,7 +50,7 @@
 	 
 	 {
 	     "type": ["Scientifique","Actrice"],
-	     "comment": "C’est un piège. <b>Hedy Lamarr</b> a été à la fois actrice et scientifique. Elle a notamment inventé un système de codage des transmissions qui est encore aujourd’hui utilisé par nos téléphones portables ou GPS. La classe hein !",
+	     "comment": "En même temps, ce n’était pas dur : <b>Hedy Lamarr</b> a été à la fois actrice et scientifique. Elle a notamment inventé un système de codage des transmissions qui est encore aujourd’hui utilisé par nos téléphones portables ou GPS. La classe hein !",
 	     "image": "persons/miniHedy_Lamarr.png"
 	 },
 	 {

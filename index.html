@@ -88,7 +88,7 @@ function show_results() {
     to_insert = "";
     percentage = score / persons.length * 100;
     for(i = 0; i < score_comments.length;++i) {
-	if( percentage >= score_comments[i][0] ) {
+	if( score >= score_comments[i][0] ) {
 	    to_insert = score_comments[i][1];
 	    break;
 	}
